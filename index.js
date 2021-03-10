@@ -161,16 +161,18 @@ Use the scoreboard function below to do the following:
   */
 
 function scoreboard(getInningScoreCallBack,inningCallBack,numOfInnings) {
-  const array=[];
-  let away_score=0;
-  let home_score=0;
-  for(let i=1;i<=numOfInnings;i++){
-    let string=`Inning ${i}: Away ${getInningScoreCallBack(inningCallBack).Home} - Home ${getInningScoreCallBack(inningCallBack).Away}`;
+  const array = [];
+  let away_score = 0;
+  let home_score = 0;
+
+  for(let i = 1;i <= numOfInnings;i++){
+    const scores = getInningScoreCallBack(inningCallBack)
+    let string=`Inning ${i}: Away ${scores.Home} - Home ${scores.Away}`;
     array.push(string);
-    away_score=away_score+getInningScoreCallBack(inningCallBack).Away;
-    home_score=home_score+getInningScoreCallBack(inningCallBack).Home;
+    away_score += scores.Away;
+    home_score += scores.Home;
   }
-  if(away_score===home_score){
+  if(away_score === home_score){
     const tie = `This game will require extra innings: Away ${away_score} - Home ${home_score}`;
     array.push(tie)
   }
