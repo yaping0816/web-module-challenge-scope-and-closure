@@ -9,7 +9,12 @@ The module challenge is the afternoon project or assignment that students work t
 ## Objectives
 
 - Explain function scope
+ 
+ where you have the access to the variables and functions
+
 - Describe what closure is, how closure is created in a program and why it is important to understand closures in JavaScript  
+
+ Closure is when a function get a value from outside scope, it give the child level fuction ability to reach out a variable from a parent level scope
 
 ## Introduction
 
@@ -64,8 +69,11 @@ dansRoll();
 ```
 
 a. Where is closure used in this code? How can you tell?
+the return function used closure because the variable name hasn't been declared within its scope but outside 
 b. Compare and contrast calling `dansRoll` the first and second time. What is always the same? What could change?
+the name "Dan" is always same, the calue of newROll would change
 c. What is the lexical scope of `newRoll`? 
+it's same level return function and outside perdonalDice function
 
 
 ### Task 3 - Stretch Goals
