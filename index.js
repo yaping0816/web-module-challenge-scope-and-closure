@@ -28,11 +28,17 @@ console.log(processFirstItem(['foo','bar'],function(str){return str+str}));
   Study the code for counter1 and counter2, then answer the questions below.
   
   1. What is the difference between counter1 and counter2?
+
+  counter1 has nested functions, and the variable count is block scoped; count in counter2 is a global variable
   
   2. Which of the two uses a closure? How can you tell?
+
+  counter1, because the counter function don't have count value at its level, it must be reach out to the parent function level to access the count value; in couter2, since there isn't nested functions so there is no closure being used
   
   3. In what scenario would the counter1 code be preferable? In what scenario would 
      counter2 be better?  
+
+     If you want to use the function more than once and let the computer remember the updated count value, use counter1; if you want ro reset the count to 0 every time uising it, use counter2.
 */
 
 // counter1 code
