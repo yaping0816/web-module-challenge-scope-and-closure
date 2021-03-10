@@ -88,8 +88,19 @@ Use the finalScore function below to do the following:
 }
 */ 
 
-function finalScore(/*code Here*/){
-  /*Code Here*/
+function finalScore(inning,numOfInnings){
+  let homeScore=0;
+  let awayScore=0;
+  const scoreObj={'Home':0, 'Away':0}
+  for(let i=0; i<numOfInnings;i++){
+    let home_score=inning();
+    let away_score=inning();
+    homeScore=homeScore+home_score;
+    awayScore=awayScore+away_score;
+    scoreObj.Home=homeScore;
+    scoreObj.Away=awayScore;
+  }
+  return scoreObj
 }
 
 /* ⚾️⚾️⚾️ Task 4: getInningScore() ⚾️⚾️⚾️
